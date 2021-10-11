@@ -7,108 +7,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>freeCodeCamp Survey Form</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
 </head>
 <main id="main">
-    <body>
+    <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+
+    <body class="container">
+        <!-- partial:index.partial.html -->
         <div class="form_title">
-            <h1>freeCodeCamp Survey Form</h1>
-            <h2>Thank you for taking the time to help us improve the platform</h2>
+            <h1 id="title">freeCodeCamp Survey Form</h1>
+            <p id="description"><i>Thank you for taking the time to help us improve the platform</i></p>
         </div>
         <div class="form_container">
-            <form class="fcc_form">
+            <form class="fcc_form" id="survey-form">
                 <div class="name">
-                    Name
-                    <input type="text" id="form_name" placeholder="Enter your name"/>
+                    <label id="name-label">
+                        <p>
+                            Name
+                        </p>
+                        <input type="text" id="name" placeholder="Enter your name" required/>
+                    </label>
                 </div>
                 <div class="form_email">
-                    Email
-                    <input type="text" id="form_email" placeholder="Enter your Email"/>
+                    <label id="email-label">
+                        <p>
+                            Email
+                        </p>
+                        <input type="email" id="email" placeholder="Enter your Email" required />
+                    </label>
                 </div>
                 <div class="form_age">
-                    Age (optional)
-                    <input type="text" id="form_age"  placeholder="Age"/>
+                    <label id="number-label">
+                        <p>
+                            Age (optional)
+                        </p>
+                        <input type="number" id="number" placeholder="Age" min="0" max="120"/>
+                    </label>
                 </div>
                 <div class="form_role">
-                    Which option best describes your current role?
-                    <select type="dropdown" id="form_role"/>
+                    <label>
+
+                        <p>
+                            Which option best describes your current role?
+                        </p>
+                        <select type="dropdown" id="dropdown" />
+                    </label>
                     <option disabled selected value>Select current role</option>
-                    <option>
-                        Student
-                    </option>
+                    <option>Student</option>
                     <option>Full time Job</option>
                     <option>Full time Leaner</option>
                     <option>Prefer not to say</option>
                     <option>Other</option>
-                </select>
-                
-            </div>
-            <div class="recommend">
-                Would you recommend freeCodeCamp to a friend?
-                <label for="Definitely"><input type="radio" name="form_recommend" checked>Definitely</input></label>
-                <label for="Maybe"><input type="radio" name="form_recommend">Maybe</input></label>
-                <label for="Not Sure"><input type="radio" name="form_recommend">Not Sure</input></label>
-            </div>
-            
-            <div class="form_feature">
-                What is your favorite feature of freeCodeCamp?
-                <select type="dropdown" id="form_feature" />
-                <option>Challenges</option>
-                <option>Projects</option>
-                <option>Community</option>
-                <option>Open Source</option>
-            </select>
-        </div>
-        
-        <ul>
-            
-            <input type="checkbox" class="form_improve"> Front-end Projects
-        </ul>
-        <ul>
-            
-            <input type="checkbox" class="form_improve"> Back-end Projects
-            
-        </ul>
-        <ul>
-            <input type="checkbox" class="form_improve"> Data Visualization
-            
-        </ul>
-        <ul>
-            <input type="checkbox" class="form_improve"> Challenges
-            
-        </ul>
-        <ul>
-            
-            <input type="checkbox" class="form_improve"> Open source Community
-        </ul>
-        <ul>
-            <input type="checkbox" class="form_improve"> Gitter help rooms
-            
-        </ul>
-        <ul>
-            <input type="checkbox" class="form_improve"> Videos
-            
-        </ul>
-        <ul>
-            <input type="checkbox" class="form_improve"> City Meetups
-            
-        </ul>
-        <ul>
-            
-            <input type="checkbox" class="form_improve"> Wiki
-        </ul>
-        <ul>
-            
-            <input type="checkbox" class="form_improve"> Forum
-        </ul>
-        <ul>
-            <input type="checkbox" class="form_improve"> Additional Sources
-            
-        </ul>
-        
-        <textarea type="textbox" class="form_suggestions"></textarea>
-        
-        <button type="button" class="form_submit">Submit</input>
-        </form>
+                    </select>
+
+                </div>
+                <div class="recommend">
+                    <p>
+                        Would you recommend freeCodeCamp to a friend?
+                    </p>
+                    <label for="Definitely"><input type="radio" name="form_recommend" value="Definitely" checked>Definitely</input></label>
+                    <label for="Maybe"><input type="radio" name="form_recommend" value="Maybe">Maybe</input></label>
+                    <label for="Not Sure"><input type="radio" name="form_recommend" value="Not Sure">Not Sure</input></label>
+                </div>
+
+                <div class="form_feature">
+                    <label>
+                        <p>
+                            What is your favorite feature of freeCodeCamp?
+                        </p>
+                        <select type="dropdown" id="form_feature" />
+                        <option value="Challenges">Challenges</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Community">Community</option>
+                        <option value="Open Source">Open Source</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form_improve">
+                    <label>
+                        <p>
+                            What would you like to see improved? (Check all that apply)
+                        </p>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Front-end Projects"> Front-end Projects
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Back-end Projects"> Back-end Projects
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Data Visualization"> Data Visualization
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Challenges"> Challenges
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Open source Community"> Open source Community
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Gitter help rooms"> Gitter help rooms
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Videos"> Videos
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="City Meetups"> City Meetups
+                                </label>
+
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Wiki"> Wiki
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Forum"> Forum
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="form_improve" value="Additional Sources"> Additional Sources
+                                </label>
+
+                            </li>
+                            <!-- <li>
+                                <label for="1">
+                                    <input type="checkbox"> All of the above
+                                </label>
+                            </li> -->
+                        </ul>
+                    </label>
+                </div>
+                <div class="suggestions">
+                    <textarea type="textbox" class="form_suggestions" placeholder="Enter your comment here..."></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="form_btn" id="submit">Submit</input>
+                </div>
+            </form>
         </div>
     </body>
 </main>
